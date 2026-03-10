@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethereal Gallery</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-animation">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="navbar glass">
+      <div class="logo">
+        <i class="fa-solid fa-camera-retro"></i>
+        <span>Ethereal</span>
+      </div>
+      <div class="nav-actions">
+        <div class="theme-switcher">
+          <button class="theme-btn" id="theme-toggle" title="Ganti Tema">
+            <i class="fa-solid fa-palette"></i>
+          </button>
+          <div class="theme-menu glass hidden" id="theme-menu">
+            <div class="theme-option" data-theme="ocean">Ocean Blue</div>
+            <div class="theme-option" data-theme="sunset">Sunset Glow</div>
+            <div class="theme-option" data-theme="emerald">Emerald Forest</div>
+            <div class="theme-option" data-theme="dark">Midnight Dark</div>
+            <div class="theme-option" data-theme="bluewhite">Blue & White</div>
+          </div>
+        </div>
+        <button class="add-btn" id="add-btn" title="Tambah Gambar">
+          <i class="fa-solid fa-plus"></i> Tambah
+        </button>
+      </div>
+    </nav>
+
+    <main class="container">
+      <header class="header">
+        <h1 class="title">Kenangan Indahmu</h1>
+        <p class="subtitle">
+          Simpan dan bagikan momen berharga di manapun dan kapanpun.
+        </p>
+      </header>
+
+      <section class="gallery" id="gallery-grid">
+        <!-- Loading indicator -->
+        <div class="loading-state" id="loading-gallery">
+          <div class="spinner"></div>
+          <p>Memuat galerimu...</p>
+        </div>
+        <!-- Images will be injected here -->
+      </section>
+    </main>
+
+    <!-- Upload Modal -->
+    <div class="modal-overlay hidden" id="upload-modal">
+      <div class="modal glass">
+        <div class="modal-header">
+          <h2>Unggah Gambar</h2>
+          <button class="close-btn" id="close-modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="upload-area" id="drop-zone">
+            <input type="file" id="file-input" accept="image/*" hidden />
+            <div class="upload-icon">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+            <p>Klik atau seret gambar ke sini</p>
+            <img id="image-preview" class="hidden" alt="Preview" />
+          </div>
+          <div class="input-group">
+            <label for="image-name">Nama Gambar (Opsional)</label>
+            <input
+              type="text"
+              id="image-name"
+              placeholder="Moment tak terlupakan..."
+            />
+          </div>
+          <div class="url-setup-warning" id="url-warning">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p>
+              Web App URL Google Script belum disetup. Harap ikuti panduan di
+              README.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn secondary" id="cancel-upload">Batal</button>
+          <button class="btn primary" id="submit-upload" disabled>
+            <span class="btn-text">Unggah Sekarang</span>
+            <i
+              class="fa-solid fa-spinner fa-spin hidden"
+              id="upload-spinner"
+            ></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image View Modal -->
+    <div class="modal-overlay hidden" id="view-modal">
+      <div class="view-modal glass">
+        <button class="close-btn absolute-close" id="close-view">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="full-image" src="" alt="Full view" />
+        <h3 id="full-image-title"></h3>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast hidden" id="toast">
+      <i class="fa-solid fa-circle-check" id="toast-icon"></i>
+      <span id="toast-message">Berhasil dinotifikasi!</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
