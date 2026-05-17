@@ -1,6 +1,6 @@
 // --- Konfigurasi ---
 // PASTE URL WEB APP GOOGLE SCRIPT DI BAWAH INI SETELAH DEPLOY
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxjrjRkoCFp97ckGtFqVrudhAz5dnYAmyOBvlXsHhFcNHLOXNQW_ysKZa23sAmoHuWgcw/exec'; // Contoh: 'https://script.google.com/macros/s/AIzaSy.../exec'
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycdxGH_aFrYqVKW9OfQ7pGWDs5MC82NHHM5kvAai-Rh4IVA3mdJHqe-WcQK8ffSxiifw/exec'; // Contoh: 'https://script.google.com/macros/s/AIzaSy.../exec'
 
 // --- Elemen DOM ---
 const themeToggleBtn = document.getElementById('theme-toggle');
